@@ -41,7 +41,7 @@ Write-Host "Running the Software Report Please be Patient!" -ForegroundColor Gre
 
 Get-CimInstance Win32_Product -ComputerName $PCNAME | ft name,version,vendor,packagename > $ExportCSV
 
-#turning of remote desktop protocol
+#turning off remote desktop protocol
 Write-Host "Turning off Remote Protocol" -ForegroundColor Yellow
 PsExec.exe /accepteula \\$PCNAME -h -s powershell.exe Disable-PSRemoting -Force
 Write-Host "Turning off Remote Protocol Completed" -ForegroundColor Green 
